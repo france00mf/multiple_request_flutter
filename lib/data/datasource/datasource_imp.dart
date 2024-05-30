@@ -22,9 +22,13 @@ class DataSourceImp implements DataSource{
   }
 
   @override
-  Future<List<MovieModel>> getPopularMovies() {
-    // TODO: implement getPopularMovies
-    throw UnimplementedError();
+  Future<List<MovieModel>> getPopularMovies() async{
+        final response = await Dio().get("/movie/popular?api_key=$api_key");
+    if (response.statusCode == 200) {
+      throw "ok";
+    } else {
+      throw "Server Error";
+    }
   }
 
   @override
