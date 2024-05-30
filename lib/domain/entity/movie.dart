@@ -12,7 +12,7 @@ class Movie extends Equatable {
   
   final bool isMovie;
 
-  Movie({required this.tmdbID, required this.title, required this.posterUrl, required this.backdropUrl, required this.voteAverage, required this.releaseDate, required this.overview, required this.isMovie});
+  const Movie({required this.tmdbID, required this.title, required this.posterUrl, required this.backdropUrl, required this.voteAverage, required this.releaseDate, required this.overview, required this.isMovie});
   
   @override
   List<Object?> get props => [
