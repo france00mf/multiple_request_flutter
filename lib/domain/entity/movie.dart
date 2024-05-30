@@ -1,0 +1,3 @@
+class Movie{
+  String? title;
+}
