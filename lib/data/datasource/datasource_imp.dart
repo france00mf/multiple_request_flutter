@@ -7,8 +7,15 @@ const api_key="62f37b6a721b68095d76716650d201f1";
 class DataSourceImp implements DataSource{
   @override
   Future<List<List<MovieModel>>> getMovies() {
-    // TODO: implement getMovies
-    throw UnimplementedError();
+       final response = Future.wait(
+      [
+        getNowPlayingMovies(),
+        getPopularMovies(),
+        getTopRatedMovies(),
+      ],
+      eagerError: true,
+    );
+    return response;
   }
 
   @override
