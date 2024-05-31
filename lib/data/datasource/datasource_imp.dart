@@ -22,7 +22,7 @@ class DataSourceImp implements DataSource{
   Future<List<MovieModel>> getNowPlayingMovies() async {
     final response = await Dio().get("https://api.themoviedb.org/3/movie/top_rated?api_key=$apiKey");
     if (response.statusCode == 200) {
-      throw "ok";
+        return List<MovieModel>.from((response.data["result"] as List).map((e) => MovieModel.fromJson(e)));
     } else {
       throw "Server Error";
     }
