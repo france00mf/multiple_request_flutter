@@ -17,7 +17,7 @@ class _MyWidgetState extends State<MyWidget> {
  late DataSourceImp imp=DataSourceImp();
   @override
   void initState() {
-    imp.getMovies();
+    imp.getNowPlayingMovies();
     super.initState();
   }
   @override
