@@ -1,3 +1,3 @@
-class MyViewBloc{
+class MyViewBloc extends Bloc{
   
 }
