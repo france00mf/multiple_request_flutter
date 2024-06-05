@@ -8,8 +8,9 @@ class MovieRepositoryImp implements MovieRepository{
   MovieRepositoryImp(this._baseMoviesRemoteDataSource);
 
   @override
-  getMovies() {
-    
+  getMovies() async{
+    final result = await _baseMoviesRemoteDataSource.getMovies();
+    // return Rig
     throw UnimplementedError();
   }
 
