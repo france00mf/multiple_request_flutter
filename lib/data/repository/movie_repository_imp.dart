@@ -2,6 +2,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:multiple_request_flutter/data/datasource/datasource.dart';
+import 'package:multiple_request_flutter/data/error/failure.dart';
+import 'package:multiple_request_flutter/domain/entity/movie.dart';
 import 'package:multiple_request_flutter/domain/repository/movie_repository.dart';
 
 class MovieRepositoryImp implements MovieRepository{
@@ -10,7 +12,7 @@ class MovieRepositoryImp implements MovieRepository{
   MovieRepositoryImp(this._baseMoviesRemoteDataSource);
 
   @override
-  getMovies() async{
+ Future<Either<Failure, List<List<Movie>>>>  getMovies() async{
     try{
 
       final result = await _baseMoviesRemoteDataSource.getMovies();
