@@ -7,10 +7,10 @@ import 'package:multiple_request_flutter/domain/repository/movie_repository.dart
 class MovieUseCase implements BaseUseCase {
   final MovieRepository movieRepository; 
   MovieUseCase(this.movieRepository);
-  
+
   @override
-  Future<Either<Failure, dynamic>> call(p) {
-    // TODO: implement call
-    throw UnimplementedError();
+  Future<Either<Failure, dynamic>> call(p) async{
+    return await movieRepository.getMovies();
+  
   }
 }
