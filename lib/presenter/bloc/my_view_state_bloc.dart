@@ -22,7 +22,7 @@ class MyViewStateBloc extends Equatable{
         movies: movies?? this.movies,
         status: status ?? this.status,
         message: message ?? this.message
-      )
+      );
    }
 
   @override
