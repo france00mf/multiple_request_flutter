@@ -11,7 +11,7 @@ class MyViewBloc extends Bloc<MyViewEventBloc, MyViewStateBloc>{
     on<MyViewEventBloc>(_getMovies);
   }
 
-  _getMovies(MyViewEventBloc eventBloc, Emitter<MyViewStateBloc> emit){
+  _getMovies(GetMyViewEventBloc eventBloc, Emitter<MyViewStateBloc> emit){
     emit(
       state.copyWith(
         status: RequestStatus.loading
