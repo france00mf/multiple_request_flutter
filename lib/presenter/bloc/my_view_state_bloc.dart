@@ -7,7 +7,7 @@ class MyViewStateBloc extends Equatable{
   final RequestStatus status;
   final String message;
 
-   MyViewStateBloc({
+   const MyViewStateBloc({
     this.movies = const [],
     this.status= RequestStatus.loading,
     this.message=''

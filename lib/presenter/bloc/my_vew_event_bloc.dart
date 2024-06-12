@@ -1,7 +1,7 @@
 
 import 'package:equatable/equatable.dart';
 
-class MyViewEventBloc extends Equatable{
+abstract class MyViewEventBloc extends Equatable{
   
   const MyViewEventBloc();
   @override

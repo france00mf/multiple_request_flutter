@@ -8,8 +8,8 @@ import 'package:multiple_request_flutter/presenter/utils.dart/enums.dart';
 class MyViewBloc extends Bloc<MyViewEventBloc, MyViewStateBloc>{
   final MovieUseCase _getMoviesUseCase;
   
-  MyViewBloc(this._getMoviesUseCase):super(MyViewStateBloc()){
-    on<MyViewEventBloc>(_getMovies);
+  MyViewBloc(this._getMoviesUseCase): super(const MyViewStateBloc()){
+    on<GetMyViewEventBloc>(_getMovies);
   }
 
   Future<void> _getMovies(GetMyViewEventBloc eventBloc, Emitter<MyViewStateBloc> emit)async{
