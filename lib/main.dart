@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:multiple_request_flutter/data/datasource/datasource_imp.dart';
+import 'package:multiple_request_flutter/presenter/view/main_app_view.dart';
 
 void main(List<String> args) {
   runApp(const MyWidget());
@@ -25,7 +26,7 @@ class _MyWidgetState extends State<MyWidget> {
     return MaterialApp(
       debugShowCheckedModeBanner: 
       false,
-      home: Scaffold(body: Center(),),
+      home: MainAppView(),
     );
   }
 }

@@ -1,15 +1,25 @@
-import 'package:flutter/widgets.dart';
 
-class MainAppView extends StatefulWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:multiple_request_flutter/core/locator/service_locator.dart';
+import 'package:multiple_request_flutter/presenter/bloc/my_view_bloc.dart';
+import 'package:multiple_request_flutter/presenter/bloc/my_view_state_bloc.dart';
+
+
+class MainAppView extends StatelessWidget {
   const MainAppView({super.key});
 
   @override
-  State<MainAppView> createState() => _MainAppViewState();
+  Widget build(BuildContext context){
+    return BlocProvider(
+      create: (context)=> locator<MyViewBloc>()..add(GetMoviesEvent()),
+      child: Scaffold(
+        body: BlocBuilder<MyViewBloc, MyViewStateBloc>(builder: (context,state){
+          return throw "";
+        }),
+      ),
+      );
+  }
+  
 }
 
-class _MainAppViewState extends State<MainAppView> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
