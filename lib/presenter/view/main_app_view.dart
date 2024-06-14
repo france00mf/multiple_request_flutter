@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiple_request_flutter/core/locator/service_locator.dart';
+import 'package:multiple_request_flutter/core/presenter/components/custom_slider.dart';
+import 'package:multiple_request_flutter/core/presenter/components/error_screen.dart';
 import 'package:multiple_request_flutter/core/presenter/components/loading_indicator.dart';
 import 'package:multiple_request_flutter/domain/entity/movie.dart';
 import 'package:multiple_request_flutter/presenter/bloc/my_vew_event_bloc.dart';
@@ -30,7 +32,11 @@ class MainAppView extends StatelessWidget {
                   topRatedMovies: state.movies[2],
               );
             case RequestStatus.error:
-             return ErrorScreen();
+             return ErrorScreen(
+              onTryAgainPressed: (){
+                context.read<MyViewBloc>()..add(GetMyViewEventBloc());
+              },
+             );
              
           }
         }),

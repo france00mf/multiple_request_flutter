@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multiple_request_flutter/core/resources/app_strings.dart';
 
 class ErrorText extends StatelessWidget {
   const ErrorText({super.key});
