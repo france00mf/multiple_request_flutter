@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:multiple_request_flutter/core/presenter/components/slider_card_image.dart';
+import 'package:multiple_request_flutter/core/resources/app_colors.dart';
+import 'package:multiple_request_flutter/core/resources/app_constants.dart';
+import 'package:multiple_request_flutter/core/resources/app_values.dart';
+import 'package:multiple_request_flutter/domain/entity/movie.dart';
 
 
 
 class SliderCard extends StatelessWidget {
   const SliderCard({
     super.key,
-    required this.media,
+    required this.movie,
     required this.itemIndex,
   });
 
-  final Media media;
+  final Movie movie;
   final int itemIndex;
 
   @override
@@ -22,7 +27,7 @@ class SliderCard extends StatelessWidget {
       child: SafeArea(
         child: Stack(
           children: [
-            SliderCardImage(imageUrl: media.backdropUrl),
+            SliderCardImage(imageUrl: movie.backdropUrl),
             Padding(
               padding: const EdgeInsets.only(
                 right: AppPadding.p16,
@@ -36,12 +41,12 @@ class SliderCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      media.title,
+                      movie.title,
                       maxLines: 2,
                       style: textTheme.titleMedium,
                     ),
                     Text(
-                      media.releaseDate,
+                      movie.releaseDate,
                       style: textTheme.bodyLarge,
                     ),
                     Padding(

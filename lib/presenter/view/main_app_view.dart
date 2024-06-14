@@ -5,6 +5,7 @@ import 'package:multiple_request_flutter/core/locator/service_locator.dart';
 import 'package:multiple_request_flutter/core/presenter/components/custom_slider.dart';
 import 'package:multiple_request_flutter/core/presenter/components/error_screen.dart';
 import 'package:multiple_request_flutter/core/presenter/components/loading_indicator.dart';
+import 'package:multiple_request_flutter/core/presenter/components/slider_card.dart';
 import 'package:multiple_request_flutter/domain/entity/movie.dart';
 import 'package:multiple_request_flutter/presenter/bloc/my_vew_event_bloc.dart';
 import 'package:multiple_request_flutter/presenter/bloc/my_view_bloc.dart';
@@ -68,38 +69,38 @@ class MoviesWidget extends StatelessWidget {
           CustomSlider(
             itemBuilder: (context, itemIndex, _) {
               return SliderCard(
-                media: nowPlayingMovies[itemIndex],
+                movie: nowPlayingMovies[itemIndex],
                 itemIndex: itemIndex,
               );
             },
           ),
-          SectionHeader(
-            title: AppStrings.popularMovies,
-            onSeeAllTap: () {
-              context.goNamed(AppRoutes.popularMoviesRoute);
-            },
-          ),
-           SectionListView(
-            height: AppSize.s240,
-            itemCount: popularMovies.length,
-            itemBuilder: (context, index) {
-              return SectionListViewCard(media: popularMovies[index]);
-            },
-          ),
+          // SectionHeader(
+          //   title: AppStrings.popularMovies,
+          //   onSeeAllTap: () {
+            
+          //   },
+          // ),
+          //  SectionListView(
+          //   height: AppSize.s240,
+          //   itemCount: popularMovies.length,
+          //   itemBuilder: (context, index) {
+          //     return SectionListViewCard(media: popularMovies[index]);
+          //   },
+          // ),
           
-            SectionHeader(
-            title: AppStrings.topRatedMovies,
-            onSeeAllTap: () {
-              context.goNamed(AppRoutes.topRatedMoviesRoute);
-            },
-          ),
-            SectionListView(
-            height: AppSize.s240,
-            itemCount: topRatedMovies.length,
-            itemBuilder: (context, index) {
-              return SectionListViewCard(media: topRatedMovies[index]);
-            },
-          ),
+          //   SectionHeader(
+          //   title: AppStrings.topRatedMovies,
+          //   onSeeAllTap: () {
+          //     context.goNamed(AppRoutes.topRatedMoviesRoute);
+          //   },
+          // ),
+          //   SectionListView(
+          //   height: AppSize.s240,
+          //   itemCount: topRatedMovies.length,
+          //   itemBuilder: (context, index) {
+          //     return SectionListViewCard(media: topRatedMovies[index]);
+          //   },
+          // ),
         ],
       ),
     );
