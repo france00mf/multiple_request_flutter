@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiple_request_flutter/core/locator/service_locator.dart';
+import 'package:multiple_request_flutter/core/presenter/components/loading_indicator.dart';
 import 'package:multiple_request_flutter/domain/entity/movie.dart';
 import 'package:multiple_request_flutter/presenter/bloc/my_vew_event_bloc.dart';
 import 'package:multiple_request_flutter/presenter/bloc/my_view_bloc.dart';
