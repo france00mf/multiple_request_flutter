@@ -29,8 +29,8 @@ class MainAppView extends StatelessWidget {
             case RequestStatus.loaded:
               return MoviesWidget(
                   nowPlayingMovies: state.movies[0],
-                  popularMovies: state.movies[1],
-                  topRatedMovies: state.movies[2],
+                  // popularMovies: state.movies[1],
+                  // topRatedMovies: state.movies[2],
               );
             case RequestStatus.error:
              return ErrorScreen(
@@ -50,13 +50,13 @@ class MainAppView extends StatelessWidget {
 
 class MoviesWidget extends StatelessWidget {
   final List<Movie> nowPlayingMovies;
-  final List<Movie> popularMovies;
-  final List<Movie> topRatedMovies;
+  final List<Movie>? popularMovies;
+  final List<Movie>? topRatedMovies;
 
   const MoviesWidget({
     super.key,
     required this.nowPlayingMovies,
-    required this.popularMovies, required this.topRatedMovies,
+     this.popularMovies,  this.topRatedMovies,
   });
 
   @override

@@ -1,10 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:multiple_request_flutter/data/datasource/datasource_imp.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:multiple_request_flutter/core/locator/service_locator.dart';
+import 'package:multiple_request_flutter/presenter/bloc/my_view_bloc.dart';
 import 'package:multiple_request_flutter/presenter/view/main_app_view.dart';
 
-void main(List<String> args) {
-  runApp(const MyWidget());
+void main() {
+  ServiceLocator.int();
+  runApp(BlocProvider(
+    create: (context) => locator<MyViewBloc>(),
+    child: const MyWidget()));
 }
 
 class MyWidget extends StatefulWidget {
@@ -15,12 +19,7 @@ class MyWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget> {
- late DataSourceImp imp=DataSourceImp();
-  @override
-  void initState() {
-    imp.getNowPlayingMovies();
-    super.initState();
-  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
