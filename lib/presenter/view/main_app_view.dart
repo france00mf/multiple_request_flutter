@@ -66,6 +66,7 @@ class MoviesWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // CASE TO SHOW 1 REQUEST MAKE
           CustomSlider(
             itemBuilder: (context, itemIndex, _) {
               return SliderCard(
@@ -74,33 +75,6 @@ class MoviesWidget extends StatelessWidget {
               );
             },
           ),
-          // SectionHeader(
-          //   title: AppStrings.popularMovies,
-          //   onSeeAllTap: () {
-            
-          //   },
-          // ),
-          //  SectionListView(
-          //   height: AppSize.s240,
-          //   itemCount: popularMovies.length,
-          //   itemBuilder: (context, index) {
-          //     return SectionListViewCard(media: popularMovies[index]);
-          //   },
-          // ),
-          
-          //   SectionHeader(
-          //   title: AppStrings.topRatedMovies,
-          //   onSeeAllTap: () {
-          //     context.goNamed(AppRoutes.topRatedMoviesRoute);
-          //   },
-          // ),
-          //   SectionListView(
-          //   height: AppSize.s240,
-          //   itemCount: topRatedMovies.length,
-          //   itemBuilder: (context, index) {
-          //     return SectionListViewCard(media: topRatedMovies[index]);
-          //   },
-          // ),
         ],
       ),
     );
